@@ -50,9 +50,9 @@ def balance_dataset(df):
         return df # Can't balance
     
     min_len = min(counts['Real'], counts['Fake'])
-    df_real = df[df['status'] == 'Real'].sample(n=min_len)
-    df_fake = df[df['status'] == 'Fake'].sample(n=min_len)
-    balanced_df = pd.concat([df_real, df_fake]).sample(frac=1).reset_index(drop=True)
+    df_real = df[df['status'] == 'Real'].sample(n=min_len, random_state=42)
+    df_fake = df[df['status'] == 'Fake'].sample(n=min_len, random_state=42)
+    balanced_df = pd.concat([df_real, df_fake]).sample(frac=1, random_state=42).reset_index(drop=True)
     return balanced_df
 
 def merge_and_get_dataset(new_dataset_path=None):
@@ -91,7 +91,7 @@ def merge_and_get_dataset(new_dataset_path=None):
         
         if dfs:
             df = pd.concat(dfs, ignore_index=True)
-            df = df.sample(n=min(20000, len(df))) # Dynamic sampling, no random_state
+            df = df.sample(n=min(20000, len(df)), random_state=42)
             df = df.drop_duplicates(subset=['content']).dropna()
             df = balance_dataset(df)
             df.to_csv(MASTER_DATASET_PATH, index=False)
@@ -159,7 +159,7 @@ def prepare_data(new_dataset_path=None, max_features=3000):
     print(f"[INFO] Saved vectorizer to {vec_path}")
     
     # 70/30 Split strictly as requested. Dynamic random state for healthy variance.
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
     print(f"[INFO] Train size: {len(X_train)} | Test size: {len(X_test)}")
     
     # We now return 'df' as well so train_models can save it later if the fail-safe passes
