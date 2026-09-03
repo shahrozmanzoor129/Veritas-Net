@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Join Us | Veritas-Net</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body class="auth-body">
+    <div class="auth-card text-center">
+        <a href="index.html"
+            class="h2 fw-bold tracking-tighter text-white font-headline mb-5 text-decoration-none d-block">Veritas-Net</a>
+
+        <h1 class="h3 fw-bold text-white font-headline mb-2">Create Account</h1>
+        <p class="text-white opacity-50 small mb-5">Join the network of verified intelligence and news integrity.</p>
+
+        <form id="registerForm" class="text-start auth-form">
+            <div class="row g-4 mb-4">
+                <div class="col-md-12">
+                    <label class="text-white fw-bold small text-uppercase tracking-widest mb-2 d-block">Full
+                        Name</label>
+                    <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Shahroz Manzoor"
+                        required>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="text-white fw-bold small text-uppercase tracking-widest mb-2 d-block">Email
+                    Address</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="shahroz@example.com"
+                    required>
+            </div>
+            <div class="mb-3 text-start">
+                <label class="text-white fw-bold small text-uppercase tracking-widest mb-2 d-block">Security Question
+                    (For Password Reset)</label>
+                <select id="securityQuestion" class="form-control" style="appearance: auto; color: white;" required>
+                    <option value="" disabled selected style="color: #141a32;">Select a security question...</option>
+                    <option value="What was your childhood nickname?" style="color: #141a32;">What was your childhood
+                        nickname?</option>
+                    <option value="What is the name of your favorite pet?" style="color: #141a32;">What is the name of
+                        your favorite pet?</option>
+                    <option value="What city were you born in?" style="color: #141a32;">What city were you born in?
+                    </option>
+                    <option value="What was the name of your first school?" style="color: #141a32;">What was the name of
+                        your first school?</option>
+                </select>
+            </div>
+            <div class="mb-4 text-start">
+                <label class="text-white fw-bold small text-uppercase tracking-widest mb-2 d-block">Your Answer</label>
+                <input type="text" id="securityAnswer" class="form-control" placeholder="Enter your answer" required>
+            </div>
+            <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                    <label class="text-white fw-bold small text-uppercase tracking-widest mb-2 d-block">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="••••••••"
+                        required>
+                </div>
+                <div class="col-md-6">
+                    <label class="text-white fw-bold small text-uppercase tracking-widest mb-2 d-block">Confirm</label>
+                    <input type="password" id="confirmPassword" name="confirm_password" class="form-control"
+                        placeholder="••••••••" required>
+                </div>
+            </div>
+
+            <div id="authMessage" class="auth-message"></div>
+
+            <button type="submit" class="btn-mint w-100 py-3 fs-5 mb-4">
+                Create Free Account
+            </button>
+        </form>
+
+        <p class="text-white opacity-50 small mb-0 mt-5">
+            Already have an account? <a href="login.html" class="text-mint fw-bold text-decoration-none">Sign In
+                here</a>
+        </p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

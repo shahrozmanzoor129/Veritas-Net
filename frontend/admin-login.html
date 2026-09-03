@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Admin Login | Veritas-Net</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #0b0f1d;
+            background-image: radial-gradient(circle at 100% 0%, rgba(0, 250, 133, 0.08) 0%, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .admin-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            padding: 4.5rem;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 50px 120px rgba(0, 0, 0, 0.6);
+        }
+
+        .form-control-admin {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.25rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .form-control-admin:focus {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--mint);
+            box-shadow: 0 0 0 4px rgba(0, 250, 133, 0.1);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-card text-center">
+        <div class="h3 fw-bold tracking-tighter text-white font-headline mb-5">
+            Veritas-Net
+            <div class="small text-mint fw-bold tracking-widest mt-1" style="font-size: 0.6rem;">ADMINISTRATION ARCHIVE
+            </div>
+        </div>
+
+        <h1 class="h4 fw-bold text-white font-headline mb-5">System Authorization</h1>
+
+        <form action="/admin-login" method="POST" class="text-start">
+            <div class="mb-4">
+                <label class="text-white fw-bold small text-uppercase tracking-widest mb-2 opacity-50 d-block">Admin
+                    Email</label>
+                <input type="email" name="email" class="form-control form-control-admin" placeholder="admin@veritas.net"
+                    required>
+            </div>
+            <div class="mb-5">
+                <label class="text-white fw-bold small text-uppercase tracking-widest mb-2 opacity-50 d-block">Access
+                    Key</label>
+                <input type="password" name="password" class="form-control form-control-admin" placeholder="••••••••"
+                    required>
+            </div>
+
+            <button type="submit" class="btn-mint w-100 py-3 fs-5">
+                Verify & Authorize
+            </button>
+        </form>
+
+        <div class="mt-5">
+            <a href="index.html"
+                class="text-white opacity-30 small text-decoration-none hover-white transition-opacity">Return to Main
+                Terminal</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

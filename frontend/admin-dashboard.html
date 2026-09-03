@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Admin Overview | Veritas-Net</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/chart.js"></script>
+</head>
+
+<body class="selection-bg-mint dashboard-body">
+    <div class="app-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-user mb-4">
+                <img src="https://ui-avatars.com/api/?name=Admin&background=141a32&color=00fa85" alt="Profile"
+                    class="user-avatar">
+                <div class="user-info">
+                    <div class="fw-bold text-white small" id="adminName">Administrator</div>
+                    <div class="badge bg-navy text-white fw-bold tracking-widest px-2" style="font-size: 0.55rem;">SUPER
+                        ADMIN</div>
+                </div>
+            </div>
+
+            <div class="sidebar-brand h3 fw-bold tracking-tighter text-white font-headline mb-5 px-2">
+                Veritas-Net
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active nav-item" data-section="overview">
+                    <i class="material-symbols-outlined">grid_view</i>
+                    <span>Overview</span>
+                </a>
+                <a href="#" class="sidebar-link nav-item" data-section="news">
+                    <i class="material-symbols-outlined">article</i>
+                    <span>Manage News</span>
+                </a>
+                <a href="#" class="sidebar-link nav-item" data-section="requests">
+                    <i class="material-symbols-outlined">rate_review</i>
+                    <span>User Requests</span>
+                </a>
+                <a href="#" class="sidebar-link nav-item" data-section="users">
+                    <i class="material-symbols-outlined">group</i>
+                    <span>Registered Users</span>
+                </a>
+                <a href="#" class="sidebar-link nav-item" data-section="model">
+                    <i class="material-symbols-outlined">psychology</i>
+                    <span>ML Model Training</span>
+                </a>
+                <a href="#" class="sidebar-link nav-item" data-section="channels">
+                    <span class="material-symbols-outlined">rss_feed</span>
+                    <span>Channels</span>
+                </a>
+                <a href="#" class="sidebar-link nav-item" data-section="settings">
+                    <i class="material-symbols-outlined">settings</i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="mt-auto">
+                <a href="#"
+                    class="btn-mint w-100 py-3 mb-4 rounded-3 fw-bold small text-decoration-none d-flex align-items-center justify-content-center border-0"
+                    id="logoutBtn">
+                    <i class="material-symbols-outlined">logout</i>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+
+            <button class="sidebar-close d-lg-none" id="sidebarToggle">
+                <i class="material-symbols-outlined">close</i>
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar border-bottom border-light">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link p-0 text-navy d-lg-none" id="mobileMenuBtn">
+                        <i class="material-symbols-outlined fs-2">menu</i>
+                    </button>
+                    <h2 class="h4 fw-bold mb-0 text-navy font-headline" id="sectionTitle">Dashboard Overview</h2>
+                    <span class="badge bg-mint text-navy fw-bold tracking-widest px-2" style="font-size: 0.6rem;">SYSTEM
+                        LIVE</span>
+                </div>
+
+                <div class="d-flex align-items-center gap-4">
+                    <!-- Search Removed as requested -->
+                </div>
+            </header>
+
+            <div class="container-fluid p-4 p-xl-5">
+                <!-- Overview Section -->
+                <div id="overview-section" class="content-section active">
+                    <!-- Metrics Grid -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card-editorial p-4">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div class="text-muted fw-bold small opacity-60">TOTAL USERS</div>
+                                    <span class="metric-pill" id="userTrend">+ 0%</span>
+                                </div>
+                                <div class="h2 fw-bold font-headline mb-3" id="totalUsers">...</div>
+                                <div style="height: 4px; border-radius: 2px; width: 100%;" class="bg-gray-light">
+                                    <div id="userProgress" style="height: 100%; border-radius: 2px; width: 0%;"
+                                        class="bg-mint transition-all"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card-editorial p-4">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div class="text-muted fw-bold small opacity-60">PUBLISHED NEWS</div>
+                                    <span class="metric-pill" id="newsTrend">+ 0%</span>
+                                </div>
+                                <div class="h2 fw-bold font-headline mb-3" id="totalNews">...</div>
+                                <div style="height: 4px; border-radius: 2px; width: 100%;" class="bg-gray-light">
+                                    <div id="newsProgress" style="height: 100%; border-radius: 2px; width: 0%;"
+                                        class="bg-mint transition-all"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card-editorial p-4">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div class="text-muted fw-bold small opacity-60">ANALYSES PERFORMED</div>
+                                    <span class="metric-pill" id="analysesTrend">+ 0%</span>
+                                </div>
+                                <div class="h2 fw-bold font-headline mb-3" id="totalAnalyses">...</div>
+                                <div style="height: 4px; border-radius: 2px; width: 100%;" class="bg-gray-light">
+                                    <div id="analysesProgress" style="height: 100%; border-radius: 2px; width: 0%;"
+                                        class="bg-mint transition-all"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card-editorial p-4 border-danger border-opacity-10">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div class="text-muted fw-bold small opacity-60">PENDING REQUESTS</div>
+                                    <span class="metric-pill danger" id="requestsTrend">0 NEW</span>
+                                </div>
+                                <div class="h2 fw-bold font-headline mb-3" id="pendingRequests">...</div>
+                                <div style="height: 4px; border-radius: 2px; width: 100%;" class="bg-gray-light">
+                                    <div id="requestsProgress" style="height: 100%; border-radius: 2px; width: 0%;"
+                                        class="bg-danger opacity-50 transition-all"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Chart -->
+                        <div class="col-lg-8">
+                            <div class="card-editorial p-4 p-md-5">
+                                <div class="d-flex justify-content-between align-items-center mb-5">
+                                    <div>
+                                        <div class="text-muted fw-bold small tracking-widest text-uppercase"
+                                            style="font-size: 0.6rem;">Performance Analytics</div>
+                                        <h3 class="h3 fw-bold font-headline mb-0">Model Performance</h3>
+                                    </div>
+                                </div>
+                                <div class="chart-container mb-5"
+                                    style="position: relative; height: 300px; width: 100%;">
+                                    <canvas id="accuracyChart"></canvas>
+                                </div>
+                                <div id="trainingResults">
+                                    <div class="row g-3">
+                                        <div class="col-6 col-sm-3">
+                                            <div class="card-editorial p-3 border-light-subtle text-center">
+                                                <div class="text-muted fw-bold small opacity-60 mb-1">ACCURACY</div>
+                                                <div class="h4 fw-bold text-navy mb-0" id="modelAccuracy">90.7%</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-sm-3">
+                                            <div class="card-editorial p-3 border-light-subtle text-center">
+                                                <div class="text-muted fw-bold small opacity-60 mb-1">PRECISION</div>
+                                                <div class="h4 fw-bold text-navy mb-0" id="modelPrecision">89.2%</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-sm-3">
+                                            <div class="card-editorial p-3 border-light-subtle text-center">
+                                                <div class="text-muted fw-bold small opacity-60 mb-1">RECALL</div>
+                                                <div class="h4 fw-bold text-navy mb-0" id="modelRecall">91.4%</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-sm-3">
+                                            <div class="card-editorial p-3 border-light-subtle text-center">
+                                                <div class="text-muted fw-bold small opacity-60 mb-1">F1-SCORE</div>
+                                                <div class="h4 fw-bold text-navy mb-0" id="modelF1">90.3%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Table will be injected here --><br><br>
+                                    <div id="algorithmComparisonOverview"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Distribution Chart -->
+                        <div class="col-lg-4 d-flex flex-column gap-4">
+                            <div class="card-editorial p-4 bg-navy">
+                                <h4 class="h5 fw-bold font-headline mb-4">News Distribution</h4>
+                                <div style="height: 250px; width: 100%;">
+                                    <canvas id="overviewChart"></canvas>
+                                </div>
+                                <div class="mt-4 text-center">
+                                    <div class="d-flex justify-content-center gap-4">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rounded-circle"
+                                                style="width:10px;height:10px;background:#10b981;"></span>
+                                            <span class="small fw-bold">Real</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rounded-circle"
+                                                style="width:10px;height:10px;background:#f59e0b;"></span>
+                                            <span class="small fw-bold">Fake</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-editorial p-4 flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h4 class="h5 fw-bold font-headline mb-0">Recent Updates</h4>
+                                    <span class="badge bg-mint text-navy fw-bold tracking-widest"
+                                        style="font-size: 0.55rem;">LATEST</span>
+                                </div>
+                                <div id="adminRecentNewsList" class="vstack gap-2">
+                                    <div class="text-center text-muted small py-4"><i
+                                            class="fas fa-spinner fa-spin"></i> Loading...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sections for dynamic JS content -->
+                <div id="news-section" class="content-section">
+                    <div class="card-editorial p-5 border-light-subtle">
+                        <div class="d-flex justify-content-between align-items-center mb-5">
+                            <h3 class="h3 fw-bold font-headline text-navy mb-0">Manage News Articles</h3>
+                            <button id="addNewsBtn" class="btn-navy px-4 py-2">Add New Article</button>
+                        </div>
+                        <div id="newsTable" class="table-responsive"></div>
+                        <div id="adminNewsList" class="row g-4 mt-2"></div>
+                    </div>
+                </div>
+
+                <div id="requests-section" class="content-section">
+                    <div class="row g-4">
+                        <div class="col-lg-7">
+                            <div class="card-editorial p-5 h-100">
+                                <h3 class="h4 fw-bold font-headline text-navy mb-5">User Verification Requests</h3>
+                                <div id="adminRequestsTable"></div>
+                                <div id="adminRequestsList" class="vstack gap-4"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5">
+                            <div class="card-editorial p-5 h-100 border-mint-subtle">
+                                <h3 class="h4 fw-bold font-headline text-navy mb-5">Inbox / Contact Messages</h3>
+                                <div id="adminContactMessagesList" class="vstack gap-3"
+                                    style="max-height: 600px; overflow-y: auto;">
+                                    <div class="text-center text-muted py-4"><i class="fas fa-spinner fa-spin"></i>
+                                        Loading...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="users-section" class="content-section">
+                    <div class="card-editorial p-5">
+                        <h3 class="h3 fw-bold font-headline text-navy mb-5">Registered Platform Users</h3>
+                        <div id="adminUsersList" class="table-responsive">
+                            <table class="table table-hover align-middle custom-admin-table">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="ps-4">No.</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Joined</th>
+                                        <th>Role</th>
+                                        <th class="text-end pe-4">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usersTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="model-section" class="content-section">
+                    <div class="row g-4 mb-5">
+                        <div class="col-lg-8">
+                            <div class="card-editorial p-5">
+                                <div class="d-flex justify-content-between align-items-center mb-5">
+                                    <div>
+                                        <div class="text-muted fw-bold small tracking-widest text-uppercase"
+                                            style="font-size: 0.6rem;">TRAINING PERFORMANCE</div>
+                                        <h3 class="h3 fw-bold font-headline text-navy mb-0">Model Accuracy Over Time
+                                        </h3>
+                                    </div>
+                                    <div class="badge bg-mint text-navy fw-bold px-3 py-2">LIVE METRICS</div>
+                                </div>
+                                <div style="height: 350px;">
+                                    <canvas id="trainingAccuracyChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card-editorial p-5 h-100 bg-navy text-white border-0 shadow-premium">
+                                <h4 class="h5 fw-bold font-headline mb-4">Retrain Model</h4>
+                                <p class="small opacity-70 mb-5">Upload a new CSV dataset to refine the model's
+                                    intelligence and improve detection accuracy across all categories.</p>
+
+                                <div id="dropzone" class="border-dashed p-5 text-center rounded-4 mb-4"
+                                    style="border: 2px dashed rgba(255,255,255,0.2); transition: all 0.3s ease;">
+                                    <i class="material-symbols-outlined fs-1 mb-3 opacity-50">cloud_upload</i>
+                                    <div class="small fw-bold">Drop CSV Dataset</div>
+                                    <input type="file" id="datasetFile" accept=".csv" style="display:none;">
+                                </div>
+
+                                <button id="trainBtn" class="btn-mint w-100 py-3 fw-bold mt-2">TRAIN MODEL</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-editorial p-5">
+                        <div id="algorithmComparisonModel"></div>
+                    </div>
+                </div>
+
+                <div id="channels-section" class="content-section">
+                    <h2 class="font-headline fw-bold text-navy mb-4">Live News Channels</h2>
+                    <div class="d-flex flex-wrap gap-2 mb-5">
+                        <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn active" data-channel="dawn">Dawn</button>
+                        <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn" data-channel="geo">Geo News</button>
+                        <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn" data-channel="ary">ARY News</button>
+                    </div>
+                    <div id="channelsGrid" class="row g-4"></div>
+                </div>
+
+                <div id="settings-section" class="content-section">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="card-editorial p-5">
+                                <h3 class="h4 fw-bold font-headline text-navy mb-5">Administrator Profile</h3>
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold small text-navy">FULL NAME</label>
+                                    <input type="text" id="settingAdminName" class="form-control" value="Administrator"
+                                        readonly>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold small text-navy">EMAIL ADDRESS</label>
+                                    <input type="email" id="settingAdminEmail" class="form-control"
+                                        value="admin@veritasnet.com" readonly>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold small text-navy d-block">SECURITY ROLE</label>
+                                    <div class="badge bg-navy text-white px-3 py-2 mt-1">Super Administrator</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <!-- News Modal -->
+    <div id="newsModal" class="ux-modal">
+        <div class="ux-modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h3 id="newsModalTitle">Add News Article</h3>
+                <button type="button" class="ux-modal-close-x">&times;</button>
+            </div>
+            <div class="modal-body p-4">
+                <form id="newsForm">
+                    <input type="hidden" id="newsId">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold small text-navy">ARTICLE TITLE</label>
+                        <input type="text" id="newsArticleTitle" class="form-control"
+                            placeholder="Enter credible title..." required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold small text-navy">CATEGORY</label>
+                        <select id="newsArticleCategory" class="form-select">
+                            <option value="technology">Technology</option>
+                            <option value="politics">Politics</option>
+                            <option value="health">Health</option>
+                            <option value="sports">Sports</option>
+                            <option value="international">International</option>
+                            <option value="general">General</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold small text-navy">ARTICLE CONTENT</label>
+                        <textarea id="newsArticleContent" class="form-control" rows="10"
+                            placeholder="Full article text..." required></textarea>
+                    </div>
+                    <div class="form-actions d-grid d-md-flex gap-3 mt-5">
+                        <button type="submit" class="btn-navy py-3 flex-grow-1">Save News Article</button>
+                        <button type="button" class="btn-outline-navy py-3 flex-grow-1 modal-close">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Verify Modal -->
+    <div class="modal fade" id="verifyModal" tabindex="-1" aria-labelledby="verifyModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: var(--radius-lg);">
+                <div class="modal-header border-bottom border-light p-4">
+                    <h5 class="modal-title font-headline h4 fw-bold text-navy" id="verifyModalTitle">Verification Result</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        id="verifyModalCloseBtn"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5" id="verifyModalBody">
+                    <!-- Dynamic Content -->
+                </div>
+                <div class="modal-footer border-top border-light p-4">
+                    <button type="button" class="btn-navy px-4 py-2" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin-dashboard.js?v=0418"></script>
+    <script src="js/channels.js"></script>
+</body>
+
+</html>

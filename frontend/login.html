@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Login | Veritas-Net</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body class="auth-body">
+    <div class="auth-card text-center">
+        <a href="index.html"
+            class="h2 fw-bold tracking-tighter text-white font-headline mb-5 text-decoration-none d-block">Veritas-Net</a>
+
+        <h1 class="h3 fw-bold text-white font-headline mb-2">Welcome Back</h1>
+        <p class="text-white opacity-50 small mb-5">Please enter your credentials to access your dashboard.</p>
+
+        <form id="loginForm" class="text-start auth-form">
+            <div class="mb-4">
+                <label class="text-white fw-bold small text-uppercase tracking-widest mb-2 d-block">Email
+                    Address</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="name@company.com"
+                    required>
+            </div>
+            <div class="mb-5">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <label class="text-white fw-bold small text-uppercase tracking-widest mb-0 d-block">Password</label>
+                    <a href="forgot-password.html" class="text-mint small fw-bold text-decoration-none">Forgot
+                        Password?</a>
+                </div>
+                <input type="password" id="password" name="password" class="form-control" placeholder="••••••••"
+                    required>
+            </div>
+
+            <div id="authMessage" class="auth-message"></div>
+
+            <button type="submit" class="btn-mint w-100 py-3 fs-5 mb-4">
+                Sign In to Dashboard
+            </button>
+        </form>
+
+        <p class="text-white opacity-50 small mb-0 mt-5">
+            Don't have an account? <a href="register.html" class="text-mint fw-bold text-decoration-none">Create free
+                account</a>
+        </p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

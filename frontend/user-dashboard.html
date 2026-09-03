@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dashboard | Veritas-Net</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body class="selection-bg-mint dashboard-body">
+    <div class="app-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand h3 fw-bold tracking-tighter text-white font-headline mb-5 px-2">
+                Veritas-Net
+                <div class="small text-mint fw-bold tracking-widest" style="font-size: 0.6rem;">THE PRECISE LUMINARY
+                </div>
+            </div>
+
+            <!-- User Profile Section -->
+            <div class="sidebar-user mb-5">
+                <img src="https://ui-avatars.com/api/?name=User&background=00fa85&color=141a32" alt="Profile"
+                    class="user-avatar" id="userAvatar">
+                <div class="user-info">
+                    <div class="fw-bold text-white small" id="userName">Loading...</div>
+                    <div class="text-white opacity-50" style="font-size: 0.7rem;" id="userEmail">...</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link nav-item active" data-section="detector">
+                    <i class="material-symbols-outlined">search_check</i>
+                    <span>News Detector</span>
+                </a>
+                <a href="#" class="sidebar-link nav-item" data-section="history">
+                    <i class="material-symbols-outlined">history</i>
+                    <span>My History</span>
+                </a>
+                <a href="#" class="sidebar-link nav-item" data-section="submit">
+                    <i class="material-symbols-outlined">upload_file</i>
+                    <span>Submit News</span>
+                </a>
+                <a href="#" class="sidebar-link nav-item" data-section="requests">
+                    <i class="material-symbols-outlined">request_quote</i>
+                    <span>My Requests</span>
+                </a>
+                <a href="#" class="sidebar-link nav-item" data-section="channels">
+                    <span class="material-symbols-outlined">rss_feed</span>
+                    <span>Channels</span>
+                </a>
+                <a href="#" class="sidebar-link nav-item" data-section="account">
+                    <i class="material-symbols-outlined">settings</i>
+                    <span>Account Settings</span>
+                </a>
+            </nav>
+
+            <a href="#" class="btn-sidebar-logout" id="logoutBtn">
+                <i class="material-symbols-outlined">logout</i>
+                <span>Logout</span>
+            </a>
+
+            <br>
+            <button class="sidebar-close d-lg-none" id="sidebarToggle">
+                <i class="material-symbols-outlined">close</i>
+            </button>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar border-bottom border-light">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link p-0 text-navy d-lg-none" id="mobileMenuBtn">
+                        <i class="material-symbols-outlined fs-2">menu</i>
+                    </button>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center gap-3 mb-1">
+                            <div class="text-mint fw-bold small tracking-widest text-uppercase"
+                                style="font-size: 0.65rem;">Live Dashboard</div>
+                            <span
+                                class="badge bg-navy text-mint border border-mint fw-bold px-2 py-1 rounded-pill d-flex align-items-center gap-1"
+                                style="font-size: 0.55rem; box-shadow: 0 0 10px rgba(0, 250, 133, 0.2);">
+                                <i class="material-symbols-outlined" style="font-size: 0.8rem;">verified_user</i>
+                                SESSION SECURE
+                            </span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-0 text-navy font-headline line-height-1" id="sectionTitle">Fake News
+                            Detector</h2>
+                    </div>
+                </div>
+
+                <!-- Empty container to maintain spacing -->
+                <div></div>
+            </header>
+
+            <div class="container-fluid p-4 p-xl-5">
+                <!-- Detector Section -->
+                <div id="detector-section" class="content-section active">
+                    <div class="row g-4">
+                        <div class="col-lg-8">
+                            <div class="card-editorial h-100 p-4 p-md-5">
+                                <div class="d-flex justify-content-between align-items-start mb-5 flex-wrap gap-4">
+                                    <div>
+                                        <span class="badge bg-mint text-navy fw-bold mb-3 px-3 py-2 rounded-2"
+                                            style="font-size: 0.7rem;">CORE MODULE</span>
+                                        <h3 class="h3 fw-bold font-headline mb-3 text-navy">Analyze News Content</h3>
+                                        <p class="text-muted fw-medium small mb-0">Our surgical algorithm
+                                            cross-references global datasets to determine factual integrity in seconds.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="card-editorial p-3 d-flex align-items-center gap-3 bg-gray-light border-0">
+                                        <div class="history-icon bg-mint">
+                                            <i class="material-symbols-outlined text-navy fs-5"
+                                                style="font-variation-settings: 'FILL' 1;">verified_user</i>
+                                        </div>
+                                        <div>
+                                            <div class="text-muted fw-bold" style="font-size: 0.6rem;">STATUS</div>
+                                            <div class="fw-bold text-navy small">System Active</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <form id="detectorForm">
+                                    <div class="bg-gray-light rounded-4 p-4 mb-5 border-light-subtle">
+                                        <textarea class="form-control bg-transparent border-0 fs-5" id="newsText"
+                                            name="newsText" rows="10"
+                                            placeholder="Paste news article or headline here..."
+                                            style="resize: none;"></textarea>
+                                        <div class="text-end mt-2">
+                                            <span id="wordCountLabel" class="text-muted fw-bold"
+                                                style="font-size: 0.65rem; transition: color 0.3s;">WORDS: 0 / 50 MIN</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-4">
+                                        <button class="btn-navy px-5 py-3 fs-5" type="submit">
+                                            Analyze News
+                                            <i class="material-symbols-outlined fs-5">bolt</i>
+                                        </button>
+                                    </div>
+                                </form>
+
+                                <div id="detectorResult" class="detector-result mt-5"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 d-flex flex-column gap-4">
+                            <div class="card-navy p-5">
+                                <h4 class="h5 fw-bold font-headline mb-5 text-white">Recent Insights</h4>
+                                <div class="mb-5 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-white opacity-60 small fw-bold mb-1">TOTAL SCANS</div>
+                                        <div class="display-5 fw-bold font-headline text-white" id="totalScansValue">...
+                                        </div>
+                                    </div>
+                                    <div class="history-icon bg-navy-light" style="background: rgba(255,255,255,0.1);">
+                                        <i class="material-symbols-outlined text-mint">trending_up</i>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-white opacity-60 small fw-bold mb-1">ACCURACY RATE</div>
+                                        <div class="display-5 fw-bold font-headline text-white" id="accuracyRateValue">
+                                            ...</div>
+                                    </div>
+                                    <div class="history-icon bg-mint">
+                                        <i class="material-symbols-outlined text-navy"
+                                            style="font-variation-settings: 'FILL' 1;">check_circle</i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-editorial flex-grow-1 p-5">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h4 class="h5 fw-bold font-headline mb-0 text-navy">Live Feed</h4>
+                                    <span class="badge bg-mint text-navy fw-bold small">REAL-TIME</span>
+                                </div>
+                                <div class="history-list" id="miniHistory">
+                                    <!-- Simplified items -->
+                                    <div class="history-item mb-3 p-3 bg-gray-light rounded-3">
+                                        <div class="fw-bold text-navy small">System optimized.</div>
+                                        <div class="text-muted x-small">2m ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History Section -->
+                <div id="history-section" class="content-section">
+                    <div class="card-editorial p-5">
+                        <div class="d-flex justify-content-between align-items-center mb-5">
+                            <h3 class="h3 fw-bold font-headline text-navy mb-0">Analysis History</h3>
+                            <button class="btn btn-outline-danger btn-sm fw-bold px-3 py-2" id="clearHistoryBtn">CLEAR
+                                ALL</button>
+                        </div>
+                        <div id="historyList" class="history-list-full row g-4"></div>
+                    </div>
+                </div>
+
+                <!-- Submit Section -->
+                <div id="submit-section" class="content-section">
+                    <div class="card-editorial p-5 mx-auto" style="max-width: 800px;">
+                        <h3 class="h3 fw-bold font-headline text-navy mb-4">Submit News for Review</h3>
+                        <form id="submitNewsForm">
+                            <div class="mb-4">
+                                <label
+                                    class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">Article
+                                    Title</label>
+                                <input type="text" id="newsTitle" class="form-control p-3 shadow-none"
+                                    placeholder="Enter credible headline">
+                            </div>
+                            <div class="mb-4">
+                                <label
+                                    class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">Category</label>
+                                <select id="newsCategory" class="form-select p-3 shadow-none">
+                                    <option value="politics">Politics</option>
+                                    <option value="tech">Technology</option>
+                                    <option value="health">Health</option>
+                                    <option value="sports">Sports</option>
+                                    <option value="international">International</option>
+                                    <option value="general" selected>General</option>
+                                </select>
+                            </div>
+                            <div class="mb-5">
+                                <label
+                                    class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">Content</label>
+                                <textarea id="newsContent" class="form-control p-3 shadow-none" rows="8"
+                                    placeholder="Paste the full article content here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-navy w-100 py-3 fs-5">Submit for Review</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Requests Section -->
+                <div id="requests-section" class="content-section">
+                    <div class="card-editorial p-5">
+                        <h3 class="h3 fw-bold font-headline text-navy mb-5">Verification Requests</h3>
+                        <div id="requestsList" class="vstack gap-4"></div>
+                    </div>
+                </div>
+
+                <!-- Channels Section -->
+                <div id="channels-section" class="content-section">
+                    <h2 class="font-headline fw-bold text-navy mb-4">Live News Channels</h2>
+                    <div class="d-flex flex-wrap gap-2 mb-5">
+                        <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn active" data-channel="dawn">Dawn</button>
+                        <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn" data-channel="geo">Geo News</button>
+                        <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn" data-channel="ary">ARY News</button>
+                    </div>
+                    <div id="channelsGrid" class="row g-4"></div>
+                </div>
+
+                <!-- Account Section -->
+                <div id="account-section" class="content-section">
+                    <div class="card-editorial p-5 mx-auto" style="max-width: 600px;">
+                        <h3 class="h3 fw-bold font-headline text-navy mb-5">Account Settings</h3>
+                        <form id="accountForm">
+                            <div class="mb-4">
+                                <label class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">Full
+                                    Name</label>
+                                <input type="text" id="accountName" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <label class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">Email
+                                    Address</label>
+                                <input type="email" id="accountEmail" class="form-control">
+                            </div>
+                            <hr class="my-5 opacity-10">
+                            <div class="mb-4">
+                                <label
+                                    class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">Current
+                                    Password</label>
+                                <input type="password" id="currentPassword" class="form-control p-3 shadow-none"
+                                    placeholder="Required to authorize changes">
+                            </div>
+                            <div class="mb-4">
+                                <label class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">New
+                                    Password</label>
+                                <input type="password" id="newPassword" class="form-control p-3 shadow-none"
+                                    placeholder="Leave blank to keep current">
+                            </div>
+                            <div class="mb-5">
+                                <label
+                                    class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">Confirm
+                                    Password</label>
+                                <input type="password" id="confirmNewPassword" class="form-control p-3 shadow-none">
+                            </div>
+                            <button type="submit" class="btn-navy w-100 py-3 fs-5">Update Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/user-dashboard.js"></script>
+    <script>
+        // Extra top bar logout listener
+        document.getElementById('logoutBtnTop')?.addEventListener('click', () => {
+            document.getElementById('logoutBtn')?.click();
+        });
+    </script>
+
+    <!-- Verify Modal -->
+    <div class="modal fade" id="verifyModal" tabindex="-1" aria-labelledby="verifyModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: var(--radius-lg);">
+                <div class="modal-header border-bottom border-light p-4">
+                    <h5 class="modal-title font-headline h4 fw-bold text-navy" id="verifyModalTitle">Verification Result</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        id="verifyModalCloseBtn"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5" id="verifyModalBody">
+                    <!-- Dynamic Content -->
+                </div>
+                <div class="modal-footer border-top border-light p-4">
+                    <button type="button" class="btn-navy px-4 py-2" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/channels.js"></script>
+</body>
+
+</html>

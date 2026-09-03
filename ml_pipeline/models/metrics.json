@@ -1,0 +1,77 @@
+{
+    "model_name": "Deep_LSTM",
+    "metrics": {
+        "accuracy": 88.63,
+        "precision": 87.37,
+        "recall": 90.24,
+        "f1_score": 88.78,
+        "inference_speed_ms": 0.12852921155587396,
+        "score": 8.871573539422206
+    },
+    "all_models": {
+        "Random_Forest": {
+            "accuracy": 88.01,
+            "precision": 93.69,
+            "recall": 81.43,
+            "f1_score": 87.13,
+            "inference_speed_ms": 0.027310996453673124,
+            "score": 8.711634450177316
+        },
+        "SVM": {
+            "accuracy": 89.02,
+            "precision": 88.88,
+            "recall": 89.13,
+            "f1_score": 89.0,
+            "inference_speed_ms": 0.007199521174862796,
+            "score": 8.899640023941258
+        },
+        "Naive_Bayes": {
+            "accuracy": 84.4,
+            "precision": 84.04,
+            "recall": 84.82,
+            "f1_score": 84.43,
+            "inference_speed_ms": 0.00927444037916817,
+            "score": 8.442536277981043
+        },
+        "Logistic_Regression": {
+            "accuracy": 88.22,
+            "precision": 88.31,
+            "recall": 88.03,
+            "f1_score": 88.17,
+            "inference_speed_ms": 0.008020688966578319,
+            "score": 8.816598965551671
+        },
+        "KNN": {
+            "accuracy": 62.93,
+            "precision": 89.99,
+            "recall": 28.83,
+            "f1_score": 43.67,
+            "inference_speed_ms": 1.2074824548318162,
+            "score": 4.306625877258409
+        },
+        "Gradient_Boosting": {
+            "accuracy": 89.33,
+            "precision": 95.96,
+            "recall": 82.04,
+            "f1_score": 88.45,
+            "inference_speed_ms": 0.03901417259636399,
+            "score": 8.843049291370182
+        },
+        "MLP": {
+            "accuracy": 88.33,
+            "precision": 88.66,
+            "recall": 87.81,
+            "f1_score": 88.24,
+            "inference_speed_ms": 0.023440992853357778,
+            "score": 8.822827950357333
+        },
+        "Deep_LSTM": {
+            "accuracy": 88.63,
+            "precision": 87.37,
+            "recall": 90.24,
+            "f1_score": 88.78,
+            "inference_speed_ms": 0.12852921155587396,
+            "score": 8.871573539422206
+        }
+    }
+}

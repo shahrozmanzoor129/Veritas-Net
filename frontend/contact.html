@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact Us | Veritas-Net</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body class="selection-bg-mint">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top w-100 z-3 glass-nav py-3">
+        <div class="container px-4">
+            <a class="navbar-brand h2 fw-bold tracking-tighter text-navy font-headline mb-0 text-decoration-none"
+                href="index.html">Veritas-Net</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <div class="mx-auto d-flex flex-column flex-lg-row align-items-center gap-4 py-3 py-lg-0">
+                    <a class="nav-link-custom text-decoration-none" href="index.html">Home</a>
+                    <a class="nav-link-custom text-decoration-none" href="news.html">News</a>
+                    <a class="nav-link-custom text-decoration-none" href="channels.html">Channels</a>
+                    <a class="nav-link-custom text-decoration-none" href="about.html">About Us</a>
+                    <a class="nav-link-custom active text-decoration-none" href="contact.html">Contact</a>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="text-navy fw-bold font-headline tracking-tight text-decoration-none px-3"
+                        href="login.html">Login</a>
+                    <a class="btn-navy" href="register.html">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="section-pts">
+        <section class="container ux-section text-center">
+            <div class="hero-badge mb-4">Get in Touch</div>
+            <h1 class="display-title mb-4">How can we help?</h1>
+            <p class="text-muted fs-5 fw-medium mx-auto mb-0" style="max-width: 600px;">
+                Have questions about our verification engine or API? Our team is here to support your mission for truth.
+            </p>
+        </section>
+
+        <section class="container ux-section-bottom">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="card-editorial p-5">
+                        <form action="/contact" method="POST">
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-6">
+                                    <label
+                                        class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">Full
+                                        Name</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Shahroz Manzoor"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label
+                                        class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">Email
+                                        Address</label>
+                                    <input type="email" name="email" class="form-control"
+                                        placeholder="shahroz@example.com" required>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label
+                                    class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">Subject</label>
+                                <input type="text" name="subject" class="form-control"
+                                    placeholder="Verification Inquiry" required>
+                            </div>
+                            <div class="mb-5">
+                                <label
+                                    class="text-navy fw-bold small text-uppercase tracking-widest mb-2 d-block">Message</label>
+                                <textarea name="message" class="form-control" rows="6"
+                                    placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-navy w-100 py-3 fs-5">
+                                Send Message
+                                <i class="material-symbols-outlined fs-5">send</i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="vstack gap-4">
+                        <div class="card-editorial p-4 d-flex align-items-center gap-4">
+                            <div class="history-icon bg-mint">
+                                <i class="material-symbols-outlined text-navy fs-4">mail</i>
+                            </div>
+                            <div>
+                                <div class="text-muted fw-bold small opacity-60">EMAIL US</div>
+                                <div class="fw-bold text-navy">shahrozmanzoor111@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="card-editorial p-4 d-flex align-items-center gap-4">
+                            <div class="history-icon bg-mint">
+                                <i class="material-symbols-outlined text-navy fs-4">location_on</i>
+                            </div>
+                            <div>
+                                <div class="text-muted fw-bold small opacity-60">Address</div>
+                                <div class="fw-bold text-navy">National University of Modern Languages, Multan, Pakistan
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-editorial p-4 d-flex align-items-center gap-4">
+                            <div class="history-icon bg-mint">
+                                <i class="material-symbols-outlined text-navy fs-4">public</i>
+                            </div>
+                            <div>
+                                <div class="text-muted fw-bold small opacity-60">FOLLOW</div>
+                                <div class="fw-bold text-navy">@simply.shahroz</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-100 ux-section border-top border-light bg-white">
+        <div class="container px-4">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-4 text-center text-lg-start">
+                    <div class="h4 fw-bold tracking-tighter text-navy font-headline mb-2">Veritas-Net</div>
+                    <p class="text-muted small fw-medium mb-0">Precision Editorial Excellence through AI verification.
+                    </p>
+                </div>
+                <div class="col-lg-8">
+                    <div
+                        class="d-flex flex-wrap justify-content-center justify-content-lg-end gap-4 gap-md-5 small fw-bold">
+                        <a href="index.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">Home</a>
+                        <a href="news.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">News</a>
+                        <a href="channels.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">Channels</a>
+                        <a href="about.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">About
+                            Us</a>
+                        <a href="contact.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mt-5 pt-4 border-top border-light d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                <p class="text-muted small fw-bold mb-0">© 2026 VERITAS-NET. PRECISION EDITORIAL EXCELLENCE.</p>
+                <div class="d-flex gap-4">
+                    <i class="material-symbols-outlined text-muted cursor-pointer hover-navy fs-5">public</i>
+                    <i class="material-symbols-outlined text-muted cursor-pointer hover-navy fs-5">share</i>
+                    <i class="material-symbols-outlined text-muted cursor-pointer hover-navy fs-5">mail</i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>

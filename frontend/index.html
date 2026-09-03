@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Veritas-Net | Precision Editorial Excellence</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Local CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body class="selection-bg-mint">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top w-100 z-3 glass-nav py-3">
+        <div class="container px-4">
+            <a class="navbar-brand h2 fw-bold tracking-tighter text-navy font-headline mb-0 text-decoration-none"
+                href="index.html">Veritas-Net</a>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <div class="mx-auto d-flex flex-column flex-lg-row align-items-center gap-4 py-3 py-lg-0">
+                    <a class="nav-link-custom active text-decoration-none" href="index.html">Home</a>
+                    <a class="nav-link-custom text-decoration-none" href="news.html">News</a>
+                    <a class="nav-link-custom text-decoration-none" href="channels.html">Channels</a>
+                    <a class="nav-link-custom text-decoration-none" href="about.html">About Us</a>
+                    <a class="nav-link-custom text-decoration-none" href="contact.html">Contact</a>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <a class="text-navy fw-bold font-headline tracking-tight text-decoration-none px-3"
+                        href="login.html">Login</a>
+                    <a class="btn-navy" href="register.html">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="section-pts">
+        <!-- Hero Section -->
+        <section class="container pb-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="hero-badge mb-4">Precision Editorial Excellence</div>
+                    <h1 class="display-title mb-4">
+                        Verify News with AI-Powered Detection
+                    </h1>
+                    <div class="d-flex flex-wrap gap-3 mt-5">
+                        <a href="#verifier" class="btn-navy px-5 py-3 fs-5 text-decoration-none">
+                            Try the Verifier
+                        </a>
+                        <a href="about.html" class="btn-outline-navy px-5 py-3 fs-5 text-decoration-none">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card-navy p-0 position-relative animate-float" style="min-height: 380px;">
+                        <img class="position-absolute w-100 h-100 object-fit-cover opacity-25 rounded-4"
+                            style="z-index: 1;"
+                            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000"
+                            alt="AI Circuitry">
+                        <div class="position-relative z-2 p-5 h-100 d-flex flex-column justify-content-end">
+                            <div
+                                class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-mint text-navy fw-bold small mb-3 align-self-start">
+                                <span class="material-symbols-outlined fs-6"
+                                    style="font-variation-settings: 'FILL' 1;">verified</span>
+                                Verified
+                            </div>
+                            <p class="text-white opacity-80 fs-5 fw-medium leading-relaxed mb-0">
+                                Our proprietary algorithms analyze linguistic patterns and source reliability in
+                                milliseconds.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Input Detection Engine (Bento Grid) -->
+        <section id="verifier" class="container ux-section">
+            <div class="row g-4">
+                <!-- Left: Verifier Box -->
+                <div class="col-lg-8">
+                    <div class="card-editorial h-100 p-5 p-md-7 border-mint-subtle">
+                        <div class="d-flex align-items-center gap-3 mb-5">
+                            <div class="rounded-circle bg-mint d-flex align-items-center justify-content-center"
+                                style="width: 56px; height: 56px;">
+                                <span class="material-symbols-outlined text-navy fs-2">center_focus_strong</span>
+                            </div>
+                            <h3 class="h3 fw-bold font-headline tracking-tight mb-0">Input Detection Engine</h3>
+                        </div>
+
+                        <form id="homeVerifyForm">
+                            <div class="bg-gray-light rounded-4 p-4 mb-5 border-light-subtle">
+                                <textarea id="homeNewsText" class="form-control bg-transparent border-0 fs-5" rows="8"
+                                    placeholder="Paste news article or headline here..."
+                                    style="resize: none;"></textarea>
+                                <div class="text-end mt-2">
+                                    <span id="indexWordCountLabel" class="text-muted fw-bold"
+                                        style="font-size: 0.65rem; transition: color 0.3s;">WORDS: 0 / 50 MIN</span>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-navy w-100 py-4 fs-4 shadow-lg hover-lift" id="verifyBtn">
+                                Verify Now
+                            </button>
+                        </form>
+
+                        <div id="homeVerifyResult" class="verify-result mt-4" style="display:none;"></div>
+                    </div>
+                </div>
+                <!-- Right: Analysis & History -->
+                <div class="col-lg-4 d-flex flex-column gap-4">
+                    <div class="card-navy p-5 d-flex flex-column justify-content-center shadow-premium">
+                        <div class="text-mint font-headline fw-bold small text-uppercase tracking-widest mb-3">Live
+                            Analysis</div>
+                        <div id="landingAccuracyRate"
+                            class="display-3 fw-bold font-headline text-mint mb-2 leading-tightest">87.9%</div>
+                        <p class="opacity-70 small fw-medium">Accuracy rate on machine-learning linguistic pattern
+                            matching.</p>
+                    </div>
+                    <div class="card-editorial p-5 flex-grow-1 border-light-subtle">
+                        <h4 class="h5 fw-bold font-headline mb-4 text-navy">Recent Verifications</h4>
+                        <div id="recentVerificationsList" class="vstack gap-3">
+                            <!-- Dynamically loaded -->
+                            <div
+                                class="d-flex align-items-center justify-content-between py-2 border-bottom border-light">
+                                <span class="text-muted text-truncate w-75 fw-medium">Global Tech Summit
+                                    Report...</span>
+                                <span class="text-mint fw-bold small">LEGIT</span>
+                            </div>
+                            <div
+                                class="d-flex align-items-center justify-content-between py-2 border-bottom border-light">
+                                <span class="text-muted text-truncate w-75 fw-medium">New Energy Breakthrough...</span>
+                                <span class="text-danger fw-bold small">SUSPECT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="container ux-section-bottom">
+            <div class="text-center mb-5 pb-4">
+                <label class="text-mint fw-bold font-headline text-uppercase tracking-widest small mb-2 d-block">The
+                    Veritas Advantage</label>
+                <h2 class="display-5 fw-bold font-headline tracking-tight">Why Choose Veritas-Net?</h2>
+            </div>
+            <div class="row g-5">
+                <!-- Feature 1 -->
+                <div class="col-lg-4">
+                    <div class="card-editorial h-100 p-5 d-flex flex-column border-light-subtle">
+                        <div class="mb-4">
+                            <div class="rounded-circle bg-gray-light d-flex align-items-center justify-content-center"
+                                style="width: 72px; height: 72px;">
+                                <span class="material-symbols-outlined fs-2 text-navy">analytics</span>
+                            </div>
+                        </div>
+                        <h3 class="h4 fw-bold font-headline mb-3 mt-auto">AI-Powered Analysis</h3>
+                        <p class="text-muted fw-medium leading-relaxed mb-4 flex-grow-1">Utilizing state-of-the-art
+                            Large Language Models to dissect sentiment, bias, and factual consistency.</p>
+                        <div class="vstack gap-3 border-top border-light pt-4 mt-auto">
+                            <div class="d-flex align-items-center gap-3 small fw-bold text-navy">
+                                <span class="material-symbols-outlined text-mint fs-5"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Sentiment Mapping
+                            </div>
+                            <div class="d-flex align-items-center gap-3 small fw-bold text-navy">
+                                <span class="material-symbols-outlined text-mint fs-5"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Bias Quantification
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="col-lg-4">
+                    <div class="card-editorial h-100 p-5 d-flex flex-column border-light-subtle">
+                        <div class="mb-4">
+                            <div class="rounded-circle bg-gray-light d-flex align-items-center justify-content-center"
+                                style="width: 72px; height: 72px;">
+                                <span class="material-symbols-outlined fs-2 text-navy">bolt</span>
+                            </div>
+                        </div>
+                        <h3 class="h4 fw-bold font-headline mb-3 mt-auto">Real-Time Detection</h3>
+                        <p class="text-muted fw-medium leading-relaxed mb-4 flex-grow-1">Seconds matter. Our
+                            infrastructure scans global news databases instantly to find corroborating evidence.</p>
+                        <div class="vstack gap-3 border-top border-light pt-4 mt-auto">
+                            <div class="d-flex align-items-center gap-3 small fw-bold text-navy">
+                                <span class="material-symbols-outlined text-mint fs-5"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Source Validation
+                            </div>
+                            <div class="d-flex align-items-center gap-3 small fw-bold text-navy">
+                                <span class="material-symbols-outlined text-mint fs-5"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Cross-Referencing
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="col-lg-4">
+                    <div class="card-editorial h-100 p-5 d-flex flex-column border-light-subtle">
+                        <div class="mb-4">
+                            <div class="rounded-circle bg-gray-light d-flex align-items-center justify-content-center"
+                                style="width: 72px; height: 72px;">
+                                <span class="material-symbols-outlined fs-2 text-navy">history</span>
+                            </div>
+                        </div>
+                        <h3 class="h4 fw-bold font-headline mb-3 mt-auto">Track Your History</h3>
+                        <p class="text-muted fw-medium leading-relaxed mb-4 flex-grow-1">Build a personal repository of
+                            verified insights and track how news narratives evolve over time.</p>
+                        <div class="vstack gap-3 border-top border-light pt-4 mt-auto">
+                            <div class="d-flex align-items-center gap-3 small fw-bold text-navy">
+                                <span class="material-symbols-outlined text-mint fs-5"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Audit Trails
+                            </div>
+                            <div class="d-flex align-items-center gap-3 small fw-bold text-navy">
+                                <span class="material-symbols-outlined text-mint fs-5"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Personal Archive
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Block -->
+        <section class="container ux-section">
+            <div class="bg-navy rounded-4 p-5 p-md-7 text-center position-relative overflow-hidden"
+                style="background: radial-gradient(circle at center, rgba(0, 250, 133, 0.1) 0%, var(--navy) 100%), var(--navy);">
+                <div class="position-absolute top-0 start-0 w-100 h-100 opacity-40" style="pointer-events: none;">
+                    <img class="w-100 h-100 object-fit-cover" alt="Dark geometric background" src="assets/cta-bg.png" />
+                </div>
+                <div class="position-relative z-1 py-5">
+                    <h2 class="display-4 fw-bolder font-headline text-white tracking-tight mb-4"
+                        style="text-shadow: 0 10px 30px rgba(0,0,0,0.3);">Ready to Fight Misinformation?</h2>
+                    <div class="mx-auto mb-5" style="max-width: 700px;">
+                        <p class="text-white fs-4 fw-medium">
+                            Join a community of critical thinkers using technology to restore truth to the digital
+                            landscape.
+                        </p>
+                    </div>
+                    <a class="btn-mint px-5 py-3 fs-4 text-decoration-none" href="register.html">
+                        Create Free Account
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-100 ux-section border-top border-light bg-white">
+        <div class="container px-4">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-4 text-center text-lg-start">
+                    <div class="h4 fw-bold tracking-tighter text-navy font-headline mb-2">Veritas-Net</div>
+                    <p class="text-muted small fw-medium mb-0">Precision Editorial Excellence through AI verification.
+                    </p>
+                </div>
+                <div class="col-lg-8">
+                    <div
+                        class="d-flex flex-wrap justify-content-center justify-content-lg-end gap-4 gap-md-5 small fw-bold">
+                        <a href="index.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">Home</a>
+                        <a href="news.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">News</a>
+                        <a href="channels.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">Channels</a>
+                        <a href="about.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">About
+                            Us</a>
+                        <a href="contact.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mt-5 pt-4 border-top border-light d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                <p class="text-muted small fw-bold mb-0">© 2026 VERITAS-NET. PRECISION EDITORIAL EXCELLENCE.</p>
+                <div class="d-flex gap-4">
+                    <i class="material-symbols-outlined text-muted cursor-pointer hover-navy fs-5">public</i>
+                    <i class="material-symbols-outlined text-muted cursor-pointer hover-navy fs-5">share</i>
+                    <i class="material-symbols-outlined text-muted cursor-pointer hover-navy fs-5">mail</i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap Bundle -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/home-verify.js"></script>
+</body>
+
+</html>

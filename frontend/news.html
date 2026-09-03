@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Latest News | Veritas-Net</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body class="selection-bg-mint">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top w-100 z-3 glass-nav py-3">
+        <div class="container px-4">
+            <a class="navbar-brand h2 fw-bold tracking-tighter text-navy font-headline mb-0 text-decoration-none"
+                href="index.html">Veritas-Net</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <div class="mx-auto d-flex flex-column flex-lg-row align-items-center gap-4 py-3 py-lg-0">
+                    <a class="nav-link-custom text-decoration-none" href="index.html">Home</a>
+                    <a class="nav-link-custom active text-decoration-none" href="news.html">News</a>
+                    <a class="nav-link-custom text-decoration-none" href="channels.html">Channels</a>
+                    <a class="nav-link-custom text-decoration-none" href="about.html">About Us</a>
+                    <a class="nav-link-custom text-decoration-none" href="contact.html">Contact</a>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="text-navy fw-bold font-headline tracking-tight text-decoration-none px-3"
+                        href="login.html">Login</a>
+                    <a class="btn-navy" href="register.html">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="section-pts">
+        <section class="container ux-section text-center">
+            <div class="hero-badge mb-4">Newsroom</div>
+            <h1 class="display-title mb-4">Latest Insights & Verified News</h1>
+            <p class="text-muted fs-5 fw-medium mx-auto mb-5" style="max-width: 600px;">
+                Stay updated with the latest in AI verification, media trends, and global information integrity.
+            </p>
+
+            <!-- Category Filter Bar -->
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+                <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn active" data-category="all">All
+                    News</button>
+                <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn"
+                    data-category="technology">Technology</button>
+                <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn"
+                    data-category="politics">Politics</button>
+                <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn"
+                    data-category="health">Health</button>
+                <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn"
+                    data-category="sports">Sports</button>
+                <button class="btn btn-outline-navy px-4 py-2 rounded-pill category-btn"
+                    data-category="international">International</button>
+            </div>
+        </section>
+
+        <section class="container ux-section-bottom">
+            <div id="newsGrid" class="row g-4">
+                <!-- News items will be dynamically loaded here by news.js -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-100 ux-section border-top border-light bg-white">
+        <div class="container px-4">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-4 text-center text-lg-start">
+                    <div class="h4 fw-bold tracking-tighter text-navy font-headline mb-2">Veritas-Net</div>
+                    <p class="text-muted small fw-medium mb-0">Precision Editorial Excellence through AI verification.
+                    </p>
+                </div>
+                <div class="col-lg-8">
+                    <div
+                        class="d-flex flex-wrap justify-content-center justify-content-lg-end gap-4 gap-md-5 small fw-bold">
+                        <a href="index.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">Home</a>
+                        <a href="news.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">News</a>
+                        <a href="channels.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">Channels</a>
+                        <a href="about.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">About
+                            Us</a>
+                        <a href="contact.html"
+                            class="nav-link-custom text-decoration-none hover-mint text-uppercase tracking-widest">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mt-5 pt-4 border-top border-light d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                <p class="text-muted small fw-bold mb-0">© 2026 VERITAS-NET. PRECISION EDITORIAL EXCELLENCE.</p>
+                <div class="d-flex gap-4">
+                    <i class="material-symbols-outlined text-muted cursor-pointer hover-navy fs-5">public</i>
+                    <i class="material-symbols-outlined text-muted cursor-pointer hover-navy fs-5">share</i>
+                    <i class="material-symbols-outlined text-muted cursor-pointer hover-navy fs-5">mail</i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- News Modal -->
+    <div class="modal fade" id="newsDetailModal" tabindex="-1" aria-labelledby="newsModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: var(--radius-lg);">
+                <div class="modal-header border-bottom border-light p-4">
+                    <h5 class="modal-title font-headline h4 fw-bold text-navy" id="newsModalTitle">News Article</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        id="newsModalCloseBtn"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5" id="newsModalBody">
+                    <!-- Dynamic Content -->
+                </div>
+                <div class="modal-footer border-top border-light p-4">
+                    <button type="button" class="btn-navy px-4 py-2" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/news.js"></script>
+</body>
+
+</html>

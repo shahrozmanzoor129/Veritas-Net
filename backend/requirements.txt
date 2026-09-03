@@ -1,0 +1,17 @@
+Flask
+Flask-CORS
+bcrypt
+pandas
+numpy
+scikit-learn
+nltk
+joblib
+keras
+jax
+jaxlib
+matplotlib
+seaborn
+mysql-connector-python
+requests
+beautifulsoup4
+feedparser

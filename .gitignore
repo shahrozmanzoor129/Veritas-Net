@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Flask
+instance/
+*.log
+
+# Datasets
+Datasets/
+
+# Model and data files
+*.keras
+*.h5
+*.pkl
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
